@@ -5,7 +5,8 @@ export default function ShortenedUrl({ shortUrl }) {
   if (!shortUrl) return null; 
 
   return (
-    <div className="mt-4">
+    <>
+    <div className="mt-6">
       <p className="text-green-600 font-semibold">Shortened URL:</p>
       <a 
         href={shortUrl}
@@ -15,6 +16,9 @@ export default function ShortenedUrl({ shortUrl }) {
       >
         {shortUrl}
       </a>
+     
     </div>
+    
+    </>
   );
 }

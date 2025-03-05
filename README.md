@@ -1,12 +1,72 @@
-# React + Vite
+# URL Shortener - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for a URL shortener application built with React.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Shorten long URLs instantly.
+- Displays expiration date (7-day validity).
+- Shows total click count for shortened URLs.
+- Copy shortened URL with one click.
+- Smooth animations using **Framer Motion**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- React.js (Vite)
+- Axios (for API requests)
+- Framer Motion (for animations)
+- CSS (or styled-components)
 
-## Expanding the ESLint configuration
+## 📂 Folder Structure
+```
+📦 src
+ ┣ 📂 components
+ ┃ ┣ 📜 InputForm.jsx  # Form component for URL input
+ ┃ ┣ 📜 ShortenedUrl.jsx # Displays the shortened URL
+ ┣ 📂 hooks
+ ┃ ┣ 📜 useShortenUrl.js  # Custom hook for API interaction
+ ┣ 📂 styles
+ ┃ ┣ 📜 styles.css  # Main CSS file
+ ┣ 📜 App.jsx  # Main component
+ ┣ 📜 main.jsx  # React entry point
+```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/url-shortener-frontend.git
+   cd url-shortener-frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in the root directory and add your backend API URL:
+   ```env
+   REACT_APP_URL=http://localhost:5000
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🔗 API Endpoints
+This frontend interacts with a backend that provides these endpoints:
+- **POST `/shorten`** → Creates a shortened URL.
+- **GET `/:shortUrl`** → Redirects to the original URL.
+- **GET `/stats/:shortUrl`** → Fetches click statistics.
+
+## ✅ Usage
+1. Enter a URL in the input field and click "Shorten".
+2. Copy the shortened link with one click.
+3. View total clicks and expiration date.
+
+## 🏗️ Future Enhancements
+- User authentication for saved links.
+- Custom short URL alias option.
+- Dark mode support.
+
+## 🤝 Contributing
+Feel free to submit pull requests or open issues for enhancements!
+
+## 📜 License
+MIT License. See [LICENSE](LICENSE) for details.
+
