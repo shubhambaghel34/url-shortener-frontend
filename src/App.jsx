@@ -1,15 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-
+import InputForm from './components/InputForm'
+import ErrorMessage from './components/ErrorMessage'
+import useShortenUrl from "./hooks/useShortenUrl";
+import ShortenedUrl from './components/ShortenedUrl';
 function App() {
-  //const [count, setCount] = useState(0)
-
+  const { shortUrl, error, loading, shortenUrl } = useShortenUrl();
   return (
-    <>
-      <div>
-        URL SHORTNER APP
-       </div>
-    </>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+      <h1 className="text-xl font-bold mb-4 text-center">🔗 URL Shortener</h1>
+
+      {/* Input Form */}
+      <InputForm shortenUrl={shortenUrl} loading={loading} />
+
+      {/* Display Shortened URL if available */}
+      {shortUrl && <ShortenedUrl shortUrl={shortUrl} />}
+
+      {/* Display Error if any */}
+      {error && <ErrorMessage error={error} />}
+    </div>
+  </div>
   )
 }
 
