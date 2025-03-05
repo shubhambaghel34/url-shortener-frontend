@@ -9,7 +9,6 @@ const useShortenUrl = () => {
   const shortenUrl = async (originalUrl) => {
     setLoading(true);
     setError(null);
-
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_URL}/shorten`, 
